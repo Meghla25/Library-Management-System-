@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: Library Management System
+    env: python
+    plan: free
+    repo: "https://github.com/<your-username>/<your-repo>"  # update with your repo
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn --preload --bind 0.0.0.0:$PORT app:app"
+    envVars:
+      - key: SECRET_KEY
+      - key: MAIL_EMAIL
+      - key: MAIL_PASSWORD
+      - key: FLASK_DEBUG
+      - key: STRIPE_SECRET_KEY
+      - key: STRIPE_PUBLISHABLE_KEY
+      - key: DATABASE_URL  # optional: use a managed DB for production
+      - key: DUE_REMINDER_DAYS
+      - key: LOW_STOCK_THRESHOLD

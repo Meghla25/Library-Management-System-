@@ -1,0 +1,7 @@
+Flask>=2.0
+gunicorn
+Werkzeug
+python-dotenv
+APScheduler
+stripe
+reportlab
